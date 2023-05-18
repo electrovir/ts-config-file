@@ -1,0 +1,15 @@
+{
+    "extends": "virmator/base-configs/base-tsconfig.json",
+    "compilerOptions": {
+        "module": "CommonJS",
+        "outDir": "./dist/",
+        "rootDir": "./src/"
+    },
+    "exclude": [
+        "./configs",
+        "./coverage",
+        "./dist",
+        "./node_modules",
+        "./test-files"
+    ]
+}

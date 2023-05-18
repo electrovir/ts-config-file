@@ -1,0 +1,42 @@
+{
+    "importTsConfigFile": {
+        "loads a simple esm config file": {
+            "myConfig": {
+                "hello": "there",
+                "what": "is this"
+            }
+        },
+        "loads a simple cjs config file": {
+            "myConfig": {
+                "hello": "there",
+                "what": "is this"
+            },
+            "default": {
+                "myConfig": {
+                    "hello": "there",
+                    "what": "is this"
+                }
+            }
+        }
+    },
+    "compiled js output": {
+        "cjs": {
+            "myConfig": {
+                "hello": "there",
+                "what": "is this"
+            },
+            "default": {
+                "myConfig": {
+                    "hello": "there",
+                    "what": "is this"
+                }
+            }
+        },
+        "esm": {
+            "myConfig": {
+                "hello": "there",
+                "what": "is this"
+            }
+        }
+    }
+}
