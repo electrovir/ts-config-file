@@ -1,6 +1,6 @@
 {
     "name": "ts-config-file",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Easily load config files for your package that are written in TypeScript.",
     "keywords": [],
     "homepage": "https://github.com/electrovir/ts-config-file",

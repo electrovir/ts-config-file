@@ -1,12 +1,14 @@
 import {randomString} from '@augment-vir/node-js';
 import {unlink} from 'fs/promises';
-import {tmpdir} from 'os';
-import {basename, join} from 'path';
+import {basename, dirname, join} from 'path';
 
 export async function importTsConfigFile(typescriptConfigFilePath: string) {
     const configName = basename(typescriptConfigFilePath).replace(/\.[^\.]+$/, '');
 
-    const tempFilePath = join(tmpdir(), `${configName}-output-${Date.now()}-${randomString()}.js`);
+    const tempFilePath = join(
+        dirname(typescriptConfigFilePath),
+        `${configName}-output-${Date.now()}-${randomString()}.js`,
+    );
 
     try {
         await (
@@ -15,7 +17,7 @@ export async function importTsConfigFile(typescriptConfigFilePath: string) {
             entryPoints: [typescriptConfigFilePath],
             outfile: tempFilePath,
             write: true,
-            bundle: true,
+            bundle: false,
             format: 'cjs',
         });
 
